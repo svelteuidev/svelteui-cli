@@ -25,7 +25,7 @@ async fn main() -> anyhow::Result<()> {
     let cli = Cli::parse();
     match &cli.sub_command {
         Some(SubCommand::New { project_name }) => {
-            create_new_project(project_name);
+            create_new_project(project_name).await?;
         }
         None => {}
     }
